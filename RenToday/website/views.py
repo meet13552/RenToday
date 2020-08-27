@@ -9,3 +9,9 @@ def index(request):
 def properties(request):
     props = Property.objects.all()
     return render(request, "properties.html", {'props': props})
+
+def about(request):
+    return render(request, "about.html")
+
+def contact(request):
+    return render(request, "contact.html")
