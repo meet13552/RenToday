@@ -10,3 +10,5 @@ class Property(models.Model):
     state = models.CharField(max_length=500)
     img = models.ImageField(upload_to='pics/')
     price = models.IntegerField()
+
+

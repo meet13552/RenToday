@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <h1>REGISTER</h1>
+
+    <form action="register" onsubmit="validate()" method="POST" name="RegForm" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+    <label  for="first_name"><b>First name</b></label>
+    <input type="tel" class="form-control" placeholder="Enter First name" name="first_name" required>
+    </div>
+
+    <div class="form-group">
+    <label  for="last_name"><b>Last name</b></label>
+    <input type="tel" class="form-control" placeholder="Enter Last name" name="last_name" required>
+    </div>
+
+    <div class="form-group">
+        <label  for="username"><b>Username</b></label>
+        <input type="tel" class="form-control" placeholder="Enter Username" name="username" required>
+    </div>
+    
+    <div class="form-group">
+    <label  for="email"><b>Email</b></label>
+    <input type="email" class="form-control" placeholder="Enter Email" name="email" required>
+    </div>
+
+    <div class="form-group">
+    <label for="psw"><b>Password</b></label>
+    <input type="password" class="form-control" placeholder="Enter Password" name="psw"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+	title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" required>
+    </div>
+
+    <div class="form-group">
+    <label for="psw_repeat"><b>Repeat Password</b></label>
+    <input type="password" class="form-control" placeholder="Repeat Password" name="psw_repeat" required>
+    </div>
+
+    <button type="submit" class="boxed-btn4">Register</button>
+
+    </div>
+
+    </form>
+
+    <script type="text/JavaScript">
+
+    function validate(){
+        var email = document.forms["RegForm"]["email"];
+        var pass = document.forms["RegForm"]["psw"];
+        var rpass = document.forms["RegForm"]["psw_repeat"];
+
+        if (email.value == "")                                   
+        { 
+            window.alert("Please enter a valid e-mail address."); 
+            email.focus(); 
+            return false; 
+        } 
+
+        if (pass.value == "")                                   
+        { 
+            window.alert("Please enter a password"); 
+            pass.focus(); 
+            return false; 
+        } 
+
+        if (rpass.value == "")                                   
+        { 
+            window.alert("Please enter password again"); 
+            rpass.focus(); 
+            return false; 
+        } 
+
+        if (pass.value != rpass.value)                                   
+        { 
+            window.alert("Please enter same password again"); 
+            rpass.focus(); 
+            return false; 
+        } 
+    }
+
+    </script>
+
+{% endblock %}
