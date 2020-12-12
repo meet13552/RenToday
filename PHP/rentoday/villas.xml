@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/xsl" href="villas.xsl" ?>
+
+<CATALOG>
+
+<CD>
+<PLACE>Lonavala</PLACE>
+<RENT>10000</RENT>
+</CD>
+
+<CD>
+<PLACE>Igatpuri</PLACE>
+<RENT>15000</RENT>
+</CD>
+
+<CD><PLACE>Mulund</PLACE>
+<RENT>150</RENT>
+</CD>
+
+<CD>
+<PLACE>O2 Villa</PLACE>
+<RENT>30000</RENT>
+</CD>
+</CATALOG>

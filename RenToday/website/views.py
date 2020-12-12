@@ -7,7 +7,20 @@ from website.models import Property
 # Create your views here.
 
 def index(request):
-    return render(request, "index.html")
+
+    pop_dest = [
+        {'name': 'Lonavala',
+        'no': '10 villas',
+        'img': 'pics/1.png'},
+
+        {'name': 'Igatpuri',
+        'no': '6 villas',
+        'img': 'pics/2.png'},
+    ]
+
+    data = {'pop_dest': pop_dest}
+
+    return render(request, "index.html", data)
 
 def properties(request):
     props = Property.objects.all()
